@@ -1,0 +1,29 @@
+server:
+    port: 8099
+
+spring:
+
+    datasource:
+        url: jdbc:postgresql://localhost:5432/testdb
+        username: postgres
+        password: adminadmin
+        driver-class-name: org.postgresql.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+
+    kafka:
+
+        bootstrap-servers: localhost:9092
+
+        consumer:
+            group-id: test1
+            auto-offset-reset: earliest
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
