@@ -2,7 +2,6 @@ server:
     port: 8099
 
 spring:
-
     datasource:
         url: jdbc:postgresql://localhost:5432/testdb
         username: postgres
@@ -15,7 +14,6 @@ spring:
         show-sql: true
 
     kafka:
-
         bootstrap-servers: localhost:9092
 
         consumer:
@@ -27,3 +25,18 @@ spring:
         producer:
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health,prometheus,metrics
+
+    endpoint:
+        health:
+            show-details: always
+
+    prometheus:
+        metrics:
+            export:
+                enabled: true
