@@ -1,0 +1,27 @@
+1. Скачать кафку		https://kafka.apache.org/downloads
+2. Старт серваков		zookeeper-server-start.bat C:\Kafka\kafka_2.12-3.3.1\config\zookeeper.properties
+				kafka-server-start.bat C:\Kafka\kafka_2.12-3.3.1\config\server.properties
+
+
+
+
+3. Создание топиков 		kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test1
+4. Список топиков 		kafka-topics.bat --list --bootstrap-server localhost:9092
+5. Просомтр инфо о топиках 	kafka-topics.bat --describe --bootstrap-server localhost:9092
+				kafka-configs.bat --bootstrap-server localhost:9092 --entity-type topics --describe --all
+6. Запись в топик (консоль) 	kafka-console-producer.bat --bootstrap-server localhost:9092 --topic test1
+7. Чтение из топика (консоль) 	kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test1 --from-beginning
+8. Удаление топика 		kafka-topics.bat --delete --bootstrap-server localhost:9092 --topic test1
+9. Инфо о консьюмергруппах 	kafka-consumer-groups.sh --describe --all-groups --bootstrap-server localhost:9092
+
+
+
+
+kafka-topics.sh --create --bootstrap-server localhost:9095 --replication-factor 1 --partitions 1 --topic testkafka2
+
+kafka-console-consumer.sh --bootstrap-server localhost:9095 --topic testkafka2 --from-beginning
+
+
+
+kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test1
+kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test1
